@@ -6,14 +6,13 @@ function App() {
   const [isSpinning, setIsSpinning] = useState(false);
   const [selectedDestination, setSelectedDestination] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [spinCount, setSpinCount] = useState(0);
+  const [destinationListExpanded, setDestinationListExpanded] = useState(false);
 
   const startRoulette = () => {
     if (isSpinning) return;
 
     setIsSpinning(true);
     setSelectedDestination(null);
-    setSpinCount(0);
 
     // ルーレット演出
     const totalSpins = Math.floor(Math.random() * 30) + 40; // 40-70回転
@@ -23,7 +22,6 @@ function App() {
     const interval = setInterval(() => {
       currentSpins++;
       setCurrentIndex((prev) => (prev + 1) % destinations.length);
-      setSpinCount(currentSpins);
 
       // スピード調整（後半になるほど遅くなる）
       // const delay = Math.min(50 + currentSpins * 3, 200);
@@ -40,7 +38,10 @@ function App() {
   const resetRoulette = () => {
     setSelectedDestination(null);
     setCurrentIndex(0);
-    setSpinCount(0);
+  };
+
+  const toggleDestinationList = () => {
+    setDestinationListExpanded(!destinationListExpanded);
   };
 
   return (
@@ -61,9 +62,7 @@ function App() {
             <div className="destination-name">
               {destinations[currentIndex].name}
             </div>
-            {isSpinning && (
-              <div className="spin-counter">回転中... ({spinCount}回転)</div>
-            )}
+            {isSpinning && <div className="spin-counter">回転中...</div>}
           </div>
         </div>
 
@@ -115,20 +114,31 @@ function App() {
         )}
 
         <div className="destination-list">
-          <h3>📍 目的地一覧</h3>
-          <div className="destination-grid">
-            {destinations.map((dest) => (
-              <div
-                key={dest.id}
-                className={`destination-item ${
-                  currentIndex === destinations.indexOf(dest) ? "current" : ""
-                }`}
-              >
-                <span className="item-emoji">{dest.emoji}</span>
-                <span className="item-name">{dest.name}</span>
-              </div>
-            ))}
+          <div className="destination-list-header">
+            <h3>📍 目的地一覧 ({destinations.length}箇所)</h3>
+            <button
+              className="toggle-button"
+              onClick={toggleDestinationList}
+              aria-label="目的地一覧を表示・非表示"
+            >
+              {destinationListExpanded ? "▼ たたむ" : "▶ 展開する"}
+            </button>
           </div>
+          {destinationListExpanded && (
+            <div className="destination-grid">
+              {destinations.map((dest) => (
+                <div
+                  key={dest.id}
+                  className={`destination-item ${
+                    currentIndex === destinations.indexOf(dest) ? "current" : ""
+                  }`}
+                >
+                  <span className="item-emoji">{dest.emoji}</span>
+                  <span className="item-name">{dest.name}</span>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </main>
 
