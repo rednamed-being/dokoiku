@@ -1,0 +1,349 @@
+/* グローバルスタイル */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  text-align: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  font-family: "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+}
+
+/* ヘッダー */
+.header {
+  padding: 2rem 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  animation: bounce 2s infinite;
+}
+
+.header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* メインコンテンツ */
+.main {
+  padding: 0 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ルーレットコンテナ */
+.roulette-container {
+  margin-bottom: 3rem;
+}
+
+.destination-display {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  padding: 3rem 2rem;
+  margin: 0 auto 2rem;
+  max-width: 500px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.destination-display.spinning {
+  animation: spin 0.1s linear infinite;
+  background: rgba(255, 255, 255, 1);
+}
+
+@keyframes spin {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.destination-emoji {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.destination-name {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.spin-counter {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+/* コントロールボタン */
+.controls {
+  margin-bottom: 3rem;
+}
+
+.spin-button,
+.reset-button {
+  background: linear-gradient(45deg, #ff6b6b, #ffa726);
+  border: none;
+  color: white;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: bold;
+  margin: 0 0.5rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.spin-button:hover,
+.reset-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3);
+}
+
+.spin-button.disabled {
+  background: #95a5a6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.reset-button {
+  background: linear-gradient(45deg, #4ecdc4, #44a08d);
+}
+
+/* 結果カード */
+.result-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 600px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  color: #333;
+  animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.result-header h2 {
+  color: #e74c3c;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.destination-main {
+  margin-bottom: 1.5rem;
+}
+
+.destination-emoji-large {
+  font-size: 5rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.destination-main h3 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.destination-region {
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  display: inline-block;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.destination-details {
+  text-align: left;
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 15px;
+  margin-bottom: 1.5rem;
+}
+
+.specialty {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.specialty strong {
+  color: #e74c3c;
+}
+
+.description {
+  color: #555;
+  line-height: 1.6;
+}
+
+.celebration {
+  text-align: center;
+}
+
+.fireworks {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  animation: sparkle 1s infinite;
+}
+
+@keyframes sparkle {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* 目的地一覧 */
+.destination-list {
+  margin-top: 3rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+}
+
+.destination-list h3 {
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+}
+
+.destination-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.destination-item {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 1rem;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.destination-item:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.destination-item.current {
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.item-emoji {
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+}
+
+.item-name {
+  font-weight: bold;
+}
+
+/* フッター */
+.footer {
+  margin-top: 3rem;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.2);
+  opacity: 0.8;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .destination-display {
+    padding: 2rem 1rem;
+  }
+
+  .destination-name {
+    font-size: 1.5rem;
+  }
+
+  .destination-emoji {
+    font-size: 3rem;
+  }
+
+  .spin-button,
+  .reset-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    margin: 0.5rem 0;
+  }
+
+  .destination-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  .result-card {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+}
