@@ -56,7 +56,7 @@ function App() {
       `みなさんも一緒に旅行しませんか？ ✈️\n` +
       `#どこいく #目的地ルーレット #旅行 #${selectedDestination.region}`;
 
-    const url = "https://rednamed-being.github.io/";
+    const url = "https://dokoiku.rednamed.red/";
     const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
       shareText
     )}&url=${encodeURIComponent(url)}`;

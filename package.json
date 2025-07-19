@@ -2,7 +2,7 @@
   "name": "dokoiku-destination-roulette",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://rednamed-being.github.io",
+  "homepage": "https://dokoiku.rednamed.red",
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
