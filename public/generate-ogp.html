@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OGP Image Generator</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
+        }
+
+        .ogp-container {
+            width: 1200px;
+            height: 630px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .decoration-circles {
+            position: absolute;
+        }
+
+        .circle-1 {
+            width: 120px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            top: 75px;
+            left: 60px;
+        }
+
+        .circle-2 {
+            width: 160px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            top: 430px;
+            right: 20px;
+        }
+
+        .circle-3 {
+            width: 80px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.15);
+            top: 460px;
+            left: 160px;
+        }
+
+        .circle-4 {
+            width: 100px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            top: 120px;
+            right: 50px;
+        }
+
+        .main-card {
+            position: absolute;
+            top: 100px;
+            left: 150px;
+            width: 900px;
+            height: 430px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(240, 248, 255, 0.9) 100%);
+            border-radius: 30px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .title {
+            font-size: 72px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 0 0 20px 0;
+        }
+
+        .subtitle {
+            font-size: 36px;
+            color: #34495e;
+            margin: 0 0 40px 0;
+        }
+
+        .description {
+            font-size: 28px;
+            color: #5a6c7d;
+            margin: 0 0 50px 0;
+        }
+
+        .cta-button {
+            background: linear-gradient(45deg, #ff6b6b, #ffa726);
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            padding: 18px 60px;
+            border-radius: 30px;
+            border: none;
+            margin-bottom: 40px;
+        }
+
+        .url {
+            font-size: 20px;
+            color: #7f8c8d;
+            position: absolute;
+            bottom: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .emoji {
+            position: absolute;
+            font-size: 48px;
+        }
+
+        .emoji-1 {
+            top: 320px;
+            left: 210px;
+        }
+
+        .emoji-2 {
+            top: 100px;
+            right: 100px;
+        }
+
+        .emoji-3 {
+            top: 100px;
+            left: 260px;
+        }
+
+        .emoji-4 {
+            top: 320px;
+            right: 100px;
+        }
+
+        .emoji-5 {
+            top: 220px;
+            left: 160px;
+        }
+
+        .emoji-6 {
+            top: 220px;
+            right: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ogp-container">
+        <div class="decoration-circles circle-1"></div>
+        <div class="decoration-circles circle-2"></div>
+        <div class="decoration-circles circle-3"></div>
+        <div class="decoration-circles circle-4"></div>
+
+        <div class="main-card">
+            <h1 class="title">🚂 どこいく？ 🎯</h1>
+            <h2 class="subtitle">目的地ルーレット</h2>
+            <p class="description">🗾 全国150箇所の観光地からランダムに選択！</p>
+            <div class="cta-button">ルーレットを回してみよう！</div>
+        </div>
+
+        <div class="emoji emoji-1">🏯</div>
+        <div class="emoji emoji-2">🗻</div>
+        <div class="emoji emoji-3">♨️</div>
+        <div class="emoji emoji-4">🏝️</div>
+        <div class="emoji emoji-5">🍜</div>
+        <div class="emoji emoji-6">🦐</div>
+
+        <div class="url">rednamed-being.github.io/dokoiku</div>
+    </div>
+</body>
+
+</html>
