@@ -44,6 +44,26 @@ function App() {
     setDestinationListExpanded(!destinationListExpanded);
   };
 
+  const shareToX = () => {
+    if (!selectedDestination) return;
+
+    const shareText =
+      `🚂 桃太郎電鉄風ルーレットの結果 🎯\n\n` +
+      `${selectedDestination.emoji} 次の目的地：${selectedDestination.name}\n` +
+      `📍 ${selectedDestination.region}地方\n` +
+      `🍴 名物：${selectedDestination.specialty}\n\n` +
+      `${selectedDestination.description}\n\n` +
+      `みなさんも一緒に旅行しませんか？ ✈️\n` +
+      `#どこいく #桃鉄風ルーレット #旅行 #${selectedDestination.region}`;
+
+    const url = "https://rednamed-being.github.io/dokoiku/";
+    const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
+      shareText
+    )}&url=${encodeURIComponent(url)}`;
+
+    window.open(tweetUrl, "_blank", "width=600,height=400");
+  };
+
   return (
     <div className="App">
       <header className="header">
@@ -109,6 +129,17 @@ function App() {
             <div className="celebration">
               <div className="fireworks">✨🎊✨🎊✨</div>
               <p>素敵な旅になりそうですね！</p>
+            </div>
+
+            {/* X（Twitter）シェアボタン */}
+            <div className="share-section">
+              <button className="share-x-button" onClick={shareToX}>
+                <span className="x-icon">𝕏</span>
+                結果をXでシェア
+              </button>
+              <p className="share-description">
+                友達と一緒に旅行計画を立てませんか？
+              </p>
             </div>
           </div>
         )}
