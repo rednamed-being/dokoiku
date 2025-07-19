@@ -1,7 +1,7 @@
 {
-  "name": "どこいく？ - 桃太郎電鉄風目的地ルーレット",
+  "name": "どこいく？ - 目的地ルーレット",
   "short_name": "どこいく？",
-  "description": "全国150箇所の観光地からランダムに次の旅行先を決められる桃鉄風ルーレットアプリ",
+  "description": "全国150箇所の観光地からランダムに次の旅行先を決められる目的地ルーレットアプリ",
   "start_url": "/dokoiku/",
   "display": "standalone",
   "background_color": "#667eea",

@@ -48,13 +48,13 @@ function App() {
     if (!selectedDestination) return;
 
     const shareText =
-      `🚂 桃太郎電鉄風ルーレットの結果 🎯\n\n` +
+      `🚂 目的地ルーレットの結果 🎯\n\n` +
       `${selectedDestination.emoji} 次の目的地：${selectedDestination.name}\n` +
       `📍 ${selectedDestination.region}地方\n` +
       `🍴 名物：${selectedDestination.specialty}\n\n` +
       `${selectedDestination.description}\n\n` +
       `みなさんも一緒に旅行しませんか？ ✈️\n` +
-      `#どこいく #桃鉄風ルーレット #旅行 #${selectedDestination.region}`;
+      `#どこいく #目的地ルーレット #旅行 #${selectedDestination.region}`;
 
     const url = "https://rednamed-being.github.io/dokoiku/";
     const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
@@ -68,7 +68,7 @@ function App() {
     <div className="App">
       <header className="header">
         <h1>🚂 どこいく？ 🎯</h1>
-        <p>桃太郎電鉄風 目的地ルーレット</p>
+        <p>目的地ルーレット</p>
       </header>
 
       <main className="main">
