@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { destinations } from "./destinations";
 import "./App.css";
 
@@ -26,7 +26,7 @@ function App() {
       setSpinCount(currentSpins);
 
       // スピード調整（後半になるほど遅くなる）
-      const delay = Math.min(50 + currentSpins * 3, 200);
+      // const delay = Math.min(50 + currentSpins * 3, 200);
 
       if (currentSpins >= totalSpins) {
         clearInterval(interval);
